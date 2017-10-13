@@ -327,6 +327,26 @@ trip.duration #=> 0
 ```
 More details can be found [here](https://developer.uber.com/docs/drivers/references/api/v1/partners-trips-get).
 
+### Vehicles details
+It returns an array of vehicles for the authenticated driver.
+> OAuth 2.0 bearer token with the partner.vehicles.
+
+```ruby
+vehicles = client.partners.vehicles
+vehicles.count #=> 1
+vehicles.offset #=> 0
+vehicles.vehicles #=> Array of Uber::Partner::Vehicle
+vehicle = vehicles.vehicles.first
+vehicle.vehicle_id #=> "2cf873b1-ff5d-4422-80da-a5cefdca3cea"
+vehicle.vin #=> "12341234123412342"
+vehicle.license_plate #=> "abc123abc"
+vehicle.make #=> "Toyota"
+vehicle.model #=> "Prius"
+vehicle.year #=> "2016"
+vehicle.picture_url #=> "http://abc.cloudfront.net/1234/abc"
+```
+More details can be found [here](https://developer.uber.com/docs/drivers/references/api/v1/partners-vehicles-get).
+
 
 
 ## Contributors

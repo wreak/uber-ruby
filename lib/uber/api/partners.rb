@@ -20,6 +20,11 @@ module Uber
         perform_with_object(:get, "/v1/partners/trips", arguments.options, Uber::Partner::TripActivity, self.client)
       end
 
+      def vehicles(*args)
+        arguments = Uber::Arguments.new(args)
+        perform_with_object(:get, "/v1/partners/vehicles", arguments.options, Uber::Partner::Vehicles, self.client)
+      end
+
       alias_method :earnings, :payments
     end
   end
